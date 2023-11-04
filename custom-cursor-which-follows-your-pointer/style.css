@@ -21,6 +21,7 @@ body{
     position: absolute;
     z-index: 111;
     border: #007794;
+    transform: scale(2);
 }
 
 
