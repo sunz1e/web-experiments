@@ -2,22 +2,73 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Poppins;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     scroll-behavior: smooth;
 }
 
 body{
     font-size: large;
     background-color: #72DDF7;
+    overflow: hidden;
 }
 
 .cursor{
-    height: 120px;
-    width: 120px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     background-color: #007794;
+    pointer-events: none;
+    position: absolute;
+    z-index: 111;
+    border: #007794;
 }
 
 
+#container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+}
+#baz{
+    font-size: 100px;
+    font-weight: bolder;
+    color: #007794;
+}
+
+
+#pink{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #d87093;
+}
+#pinkinner{
+    font-size: 100px;
+    font-weight: bolder;
+    color: pink;
+}
+
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+#getBig{
+    opacity: 0;
+    pointer-events: none;
+}
 
 
