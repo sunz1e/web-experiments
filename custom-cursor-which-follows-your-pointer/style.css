@@ -43,7 +43,8 @@ body{
 #pink{
     width: 100vw;
     height: 100vh;
-    display: none;
+    display: flex;
+    visibility: collapse;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -67,7 +68,7 @@ body{
   }
 
 #getBig{
-    opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 }
 
