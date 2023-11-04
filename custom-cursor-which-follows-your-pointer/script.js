@@ -29,11 +29,21 @@ document.addEventListener("DOMContentLoaded", function() {
       gsap.to('body', { duration: 0.5, backgroundColor: '#72DDF7'})
     })
 
+   
+
+
     buz.addEventListener("click", function() {
-            gsap.to(".cursor", {opacity: 0})
-            gsap.to("#getBig", 1, {opacity: 1})
-            gsap.to("#getBig", 1, {color: '#F191AC'})
-            gsap.to("#getBig", 1, {width: '100%', height: '100%',  ease: "Linear.easeNone", delay: 1 })
+
+            var tl = gsap.timeline();
+            // tl.set(".cursor", {opacity: 0})
+            tl.to("#getBig", 0.1, {opacity: 1, color: '#F191AC'})
+            tl.to("#getBig", 0.8, {width: '100%', height: '100%',  ease: "expoScale(0.5,7,none)"})
+
+            // gsap.to("#getBig", 1, {width: '100%', height: '100%',  ease: "Linear.easeNone", delay: 1 })
+            // gsap.to(".cursor", {opacity: 0})
+            // gsap.to("#getBig", 1, {opacity: 1})
+            // gsap.to("#getBig", 1, {color: '#F191AC'})
+            // gsap.to("#getBig", 1, {width: '100%', height: '100%',  ease: "Linear.easeNone", delay: 1 })
             // gsap.to("#container", 2, {display: 'none',  ease: "power4.inOut", delay: 1 })
             // gsap.to("#pink", 2, {display: 'flex',  ease: "power4.inOut", delay: 1 })
     })
