@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let buz = document.getElementById("baz");
   
     buz.addEventListener("mouseover", function() {
-      gsap.to(".cursor", 0.2,{scale:0.5, backgroundColor: '#F191AC'})
+      gsap.to(".cursor", 0.2,{scale:0.5, backgroundColor: '#d87093'})
       gsap.to("#getBig", {visibility: 'hidden'})
       // gsap.to("#baz", 0.2, {color: '#F4BBC9'})
       // gsap.to('body', { duration: 0.5, backgroundColor: '#F191AC'})
@@ -30,22 +30,34 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
    
-
+    var animating = false;
 
     buz.addEventListener("click", function() {
 
-            var tl = gsap.timeline();
-            tl.to("#getBig", 0.05, {opacity: 1, visibility: 'visible', color: '#F191AC'})
-            tl.to(".main-c", {visibility: 'hidden'})
-            // tl.to("#getBig", {duration: 0.4, scale: 0.4,  ease: "power3"}, "-=0.5")
-            tl.to("#getBig", {duration: 1.5, scale: 50,  ease: "power3"}, "-=0.5")
-            tl.to("#pink", {visibility: 'visible'}, "-=1")
-            tl.to("#container", {visibility: 'collapse'})
-            tl.to("#getBig", {visibility: 'hidden'})
 
-            var tl2 = gsap.timeline();
-            tl2.from("#pinkinner", {duration: 1.5, y: '120vh',  ease: "power3"})
-            tl2.to("#pinkinner", {scale: 1.5 ,ease: "power3"}, "-=1")
+        if(animating == false){
+          console.log("came inside the animation loop")
+          animating = true;
+          var tl = gsap.timeline({onComplete: function() {
+            animating = false;
+          }});
+          tl.to("#getBig", 0.05, {opacity: 1, visibility: 'visible', color: '#d87093'})
+          tl.to(".main-c", {visibility: 'hidden'})
+          // tl.to("#getBig", {duration: 0.4, scale: 0.4,  ease: "power3"}, "-=0.5")
+          tl.to("#getBig", {duration: 1.5, scale: 50,  ease: "power3"}, "-=0.5")
+          tl.to("#getBig", {visibility: 'hidden'})            
+          tl.to("#pink", {visibility: 'visible'}, "-=1")
+          tl.to("#container", {visibility: 'collapse'})
+   
+
+          var tl2 = gsap.timeline();
+          tl2.from("#pinkinner", {duration: 2, y: '120vh',  ease: "power3"})
+          tl2.to("#pinkinner", {scale: 2 ,ease: "power3"})
+         
+          console.log("going outside of the animation loop")
+        }
+        console.log("completed the animation loop")
+
     })
 
 

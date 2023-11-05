@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         element.addEventListener("mousemove", function(e) {
             const { clientX, clientY} = e;
-            console.log(this)
             const {width, height, left, top} = element.getBoundingClientRect();
             const x = clientX - (left + width / 2);
             const y = clientY - (top + height / 2);
