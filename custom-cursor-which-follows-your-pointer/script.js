@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", function() {
   let buz = document.getElementById("baz");
   
     buz.addEventListener("mouseover", function() {
-      gsap.to(".cursor", 0.2,{scale:0.8, backgroundColor: '#F191AC'})
+      gsap.to(".cursor", 0.2,{scale:0.5, backgroundColor: '#F191AC'})
       gsap.to("#getBig", {visibility: 'hidden'})
       // gsap.to("#baz", 0.2, {color: '#F4BBC9'})
       // gsap.to('body', { duration: 0.5, backgroundColor: '#F191AC'})
     })
 
     buz.addEventListener("mouseleave", function() {
-      gsap.to(".cursor", 0.2,{scale:2, backgroundColor: '#007794'})
+      gsap.to(".cursor", 0.2,{scale:1, backgroundColor: '#007794'})
       gsap.to("#getBig", {visibility: 'hidden'})
       gsap.to("#baz", 0.2, {color: '#007794'})
       gsap.to('body', { duration: 0.5, backgroundColor: '#72DDF7'})
@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
             tl.to("#getBig", {visibility: 'hidden'})
 
             var tl2 = gsap.timeline();
-            t12.from("#pink", {duration: 1, y: -100,  ease: "power3"})
+            tl2.from("#pinkinner", {duration: 1.5, y: '120vh',  ease: "power3"})
+            tl2.to("#pinkinner", {scale: 1.5 ,ease: "power3"}, "-=1")
     })
 
 
