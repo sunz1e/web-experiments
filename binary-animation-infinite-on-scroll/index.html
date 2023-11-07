@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling Binary Text</title>
+  <style>
+    body {
+      height: 2000vh; /* Ensure enough scrolling space for the effect */
+      font-size: 24px;
+      background-color: #58BC82;
+      scroll-behavior: smooth;
+    }
+    #container{
+        position: fixed;
+    }
+
+    .binary-text {
+      top: 10px;
+      left: 10px;
+      color: #8FE388;
+      font-weight: bold;
+      padding: 10px;
+      font-family:'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+    <div id="container">
+        <div class="binary-text">01010011</div>
+        <div class="binary-text">01110101</div>
+        <div class="binary-text">01101110</div>
+        <div class="binary-text">01101110</div>
+        <div class="binary-text">01111001</div>
+    </div>
+ 
+
+  <script>
+    // Function to generate a random binary string
+    function getRandomBinaryString(length) {
+      let binaryString = '';
+      for (let i = 0; i < length; i++) {
+        binaryString += Math.random() < 0.5 ? '0' : '1';
+      }
+      return binaryString;
+    }
+
+    var binaryText = document.getElementsByClassName('binary-text');
+    console.log(binaryText)
+
+    // Event handler for the scroll event
+    function handleScroll() {
+      const scrollPos = window.scrollY;
+      const binaryString = getRandomBinaryString(8); // Change the length as needed
+      binaryText.textContent = binaryString;
+    }
+
+  
+
+    window.addEventListener('scroll', () => {
+      for (var i = 0; i < binaryText.length; i++) {
+        const scrollPos = window.scrollY;
+        const binaryString = getRandomBinaryString(8); // Change the length as needed
+        binaryText[i].textContent = binaryString;
+      }
+      });
+
+    
+
+    // Initial call to set the binary string
+    handleScroll();
+  </script>
+</body>
+</html>
