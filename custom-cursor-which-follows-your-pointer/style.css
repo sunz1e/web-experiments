@@ -11,10 +11,10 @@ body{
     height: 100vh;
     width: 100vw;
     display: flex;
-    align-items:last baseline;
+    align-items:flex-start;
     justify-content: flex-start;
     overflow: hidden;
-    background-color: rgb(140, 251, 255);
+    background-color: #72DDF7;
 }
 
 a{
@@ -24,7 +24,7 @@ a{
 .text{
     font-size: 100px;
     font-weight: bolder;
-    color: cadetblue;
+    color: #007794;
     cursor: pointer;
     top: 20px
 }

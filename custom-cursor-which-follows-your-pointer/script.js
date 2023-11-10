@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-    gsap.set("#indexOverlay", { visibility: "visible", width: "10px", height: "10px" });
+    //gsap.set("#indexOverlay", { visibility: "visible", width: "10px", height: "10px" });
 
     var overlay = document.getElementById("indexOverlay")
 
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(text != null){
         text.addEventListener("click",function(event) {
             event.preventDefault();
+            gsap.set("#indexOverlay", { visibility: "visible", width: "10px", height: "10px" });
             text.children[1].children[0].textContent = ""
 
             console.log(text)
@@ -63,9 +64,9 @@ document.addEventListener("DOMContentLoaded", function() {
             
             
  
-            gsap.to("#indexOverlay", {duration: 1.5, width: (2 * horizontal + divRect.width) +"px", height: (2 * vertical + divRect.height) +"px", ease: "power3",  onComplete: () => {
+            gsap.to("#indexOverlay", {duration: 0.9, width: (2 * horizontal + divRect.width) +"px", height: (2 * vertical + divRect.height) +"px", ease: "power3",  onComplete: () => {
                 // Animation is complete, navigate to the other page
-                 window.location.href = text.children[1].getAttribute('href')
+                window.location.href = text.children[1].getAttribute('href')
                 console.log("done")
                 
             }}, )
