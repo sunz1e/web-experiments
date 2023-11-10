@@ -24,7 +24,7 @@ a{
 .text{
     font-size: 100px;
     font-weight: bolder;
-    color: cadetblue;
+    color: rgb(255, 185, 159);
     cursor: pointer;
 }
 
@@ -37,7 +37,7 @@ a{
 
 #indexOverlay{
     visibility: hidden;
-    background-color: coral;
+    background-color: #ff7f50;
     position: absolute;
-    z-index: -111;
+    z-index: 111;
 }
