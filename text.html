@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .section-arrow {
+      cursor: pointer;
+    }
+
+    .clicked-arrow {
+      color: red; /* You can style it as per your requirement */
+    }
+  </style>
+  <title>Clicked Arrow Example</title>
+</head>
+<body>
+
+  <div class="section-arrow" onclick="handleClick(this)">Element 1</div>
+  <div class="section-arrow" onclick="handleClick(this)">Element 2</div>
+  <div class="section-arrow" onclick="handleClick(this)">Element 3</div>
+
+  <script>
+    function handleClick(element) {
+      // Remove the clicked-arrow class from all elements
+      const elements = document.querySelectorAll('.section-arrow');
+      elements.forEach(el => el.classList.remove('clicked-arrow'));
+
+      // Add the clicked-arrow class to the clicked element
+      element.classList.add('clicked-arrow');
+    }
+  </script>
+
+</body>
+</html>
